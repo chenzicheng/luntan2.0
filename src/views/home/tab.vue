@@ -2,7 +2,13 @@
   <div class="pc-home-tab1">
     <div class="content-warper clearfix">
       <div :class="{fixed:fixed}" class="nav">
-        <div class="fsdf" v-for="(item,index) in 20" :key="index">{{index}}{{fixed}}</div>
+        <div
+          class="nav-item"
+          :class="{'on':index==activeIndex}"
+          @click="typeSelect(index)"
+          v-for="(item,index) in typeList"
+          :key="index"
+        >{{item.typename}}</div>
       </div>
       <div class="pc-content clearfix">
         <div class="fl content-l">
@@ -41,7 +47,82 @@
             </div>
           </div>
         </div>
-        <div class="content-l">asdada</div>
+        <div class="content-r fr">
+          <div class="content-r-title clearfix">
+            <span class="line"></span>
+            <span class="txt">今日推荐</span>
+          </div>
+          <div class="right-box">
+            <ul class="company-list">
+              <li class="company-item clearfix">
+                <div class="img-box">
+                  <img
+                    src="https://statics.lotsmall.cn/image/20190420/20190420085850itoxef.jpeg?imageMogr2/thumbnail/640x/strip/quality/50"
+                    alt
+                  />
+                </div>
+                <div
+                  class="content"
+                >爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所</div>
+              </li>
+              <li class="company-item clearfix">
+                <div class="img-box">
+                  <img
+                    src="https://statics.lotsmall.cn/image/20190420/20190420085850itoxef.jpeg?imageMogr2/thumbnail/640x/strip/quality/50"
+                    alt
+                  />
+                </div>
+                <div
+                  class="content"
+                >爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所</div>
+              </li>
+              <li class="company-item clearfix">
+                <div class="img-box">
+                  <img
+                    src="https://statics.lotsmall.cn/image/20190420/20190420085850itoxef.jpeg?imageMogr2/thumbnail/640x/strip/quality/50"
+                    alt
+                  />
+                </div>
+                <div
+                  class="content"
+                >爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所</div>
+              </li>
+              <li class="company-item clearfix">
+                <div class="img-box">
+                  <img
+                    src="https://statics.lotsmall.cn/image/20190420/20190420085850itoxef.jpeg?imageMogr2/thumbnail/640x/strip/quality/50"
+                    alt
+                  />
+                </div>
+                <div
+                  class="content"
+                >爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所</div>
+              </li>
+              <li class="company-item clearfix">
+                <div class="img-box">
+                  <img
+                    src="https://statics.lotsmall.cn/image/20190420/20190420085850itoxef.jpeg?imageMogr2/thumbnail/640x/strip/quality/50"
+                    alt
+                  />
+                </div>
+                <div
+                  class="content"
+                >爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所</div>
+              </li>
+              <li class="company-item clearfix">
+                <div class="img-box">
+                  <img
+                    src="https://statics.lotsmall.cn/image/20190420/20190420085850itoxef.jpeg?imageMogr2/thumbnail/640x/strip/quality/50"
+                    alt
+                  />
+                </div>
+                <div
+                  class="content"
+                >爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所爱仕达大所大所大大所大所大所大所大所大所大所大所大所</div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50,8 +131,49 @@
 export default {
   data() {
     return {
+      activeIndex: 0,
+      typeList: [
+        {
+          type: 'type1',
+          typename: '类型1'
+        },
+        {
+          type: 'type1',
+          typename: '类型1类型1'
+        },
+        {
+          type: 'type1',
+          typename: '类型1'
+        },
+        {
+          type: 'type1',
+          typename: '类型1类型1'
+        },
+        {
+          type: 'type1',
+          typename: '类型1'
+        },
+        {
+          type: 'type1',
+          typename: '类型1'
+        }
+      ],
       fixed: false,
       arr: [1, 2, 3, 4, 5, 6, 7, 78, 8, 9, 90, 0, 0, 0]
+    }
+  },
+  methods: {
+    typeSelect(index) {
+      console.log('zz')
+      // if (document.body) {
+      //   document.body.scrollTop = 0
+      // } else if (document.documentElement) {
+      //   document.documentElement.scrollTop = 0
+      // }
+      this.activeIndex = index
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+      this.arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0]
     }
   },
   mounted() {
@@ -68,7 +190,7 @@ export default {
       }
       scrollTop = bodyScrollTop - documentScrollTop > 0 ? bodyScrollTop : documentScrollTop
       console.log(scrollTop)
-      if (scrollTop > 40) {
+      if (scrollTop >= 40) {
         _this.fixed = true
       } else {
         _this.fixed = false
@@ -194,10 +316,14 @@ export default {
           -webkit-line-clamp: 1;
           /* ! autoprefixer: off */
           -webkit-box-orient: vertical;
-          /* autoprefixer: on */
           overflow: hidden;
         }
         .title {
+          &:hover {
+            .title-text {
+              color: #cf2730;
+            }
+          }
           .title-text {
             color: #3d3d3d;
             font-size: 18px;
@@ -213,6 +339,70 @@ export default {
     .content-r {
       width: 300px;
       display: block;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+      background: #fff;
+      padding: 16px 16px;
+      margin-bottom: 12px;
+      margin-top: 0;
+      .content-r-title {
+        margin-bottom: 16px;
+        .txt {
+          display: block;
+          float: left;
+          font-size: 16px;
+          color: #2c3033;
+        }
+        .line {
+          float: left;
+          width: 3px;
+          height: 16px;
+          background: #cf2730;
+          overflow: hidden;
+          margin-right: 5px;
+          margin-top: 5px;
+        }
+      }
+      .right-box {
+        .company-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          .company-item {
+            margin-bottom: 16px;
+            &:hover {
+              .content {
+                color: #cf2730;
+              }
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            .img-box {
+              float: left;
+              padding-right: 10px;
+              img {
+                height: 48px;
+                width: 64px;
+                border-radius: 6px;
+              }
+            }
+            .content {
+              padding-top: 2px;
+              word-break: break-all;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              /* ! autoprefixer: off */
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              font-weight: 600;
+              margin-bottom: 3px;
+              font-size: 14px;
+              color: #3d3d3d;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
   .content-warper {
@@ -233,6 +423,20 @@ export default {
       &.fixed {
         position: fixed;
         top: 0;
+      }
+      .nav-item {
+        border-bottom: 1px solid #fff;
+        &:hover {
+          background: #f44444;
+          color: #fff;
+        }
+        &:last-child {
+          border: none;
+        }
+        &.on {
+          background: #f44444;
+          color: #fff;
+        }
       }
     }
     .pc-content {

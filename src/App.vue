@@ -40,4 +40,16 @@ export default {
 #app {
   height: 100%;
 }
+.clearfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
+  height: 0;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
 </style>

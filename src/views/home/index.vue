@@ -27,33 +27,24 @@
           />
           <i class="iconfont iconshangjiantou"></i>
           <div class="select-box">
-            <div>11</div>
-            <div>11</div>
+            <div>
+               <router-link tag="span" :to="{ path: '/mdeditor'}">发起提问</router-link>
+            </div>
+            <div>我的提问</div>
             <div>11</div>
             <div>11</div>
           </div>
         </div>
       </div>
     </div>
-     <router-view />
+    <router-view />
   </div>
 </template>
 <script>
 export default {}
 </script>
 <style lang="scss">
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
-  height: 0;
-}
-.fl{
-  float: left;
-}
-.fr{
-  float:right;
-}
+
 .pc-home {
   background: #f5f6f7;
   height: 100%;

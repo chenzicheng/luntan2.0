@@ -334,6 +334,11 @@ export const constantRouterMap = [
       }
     ]
   },
+  {
+    path: '/mdeditor',
+    name: 'mdeditor',
+    component: () => import('@/views/home/mdeditor')
+  },
 
   // {
   //   path: '/',
