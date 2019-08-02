@@ -27,12 +27,14 @@
           />
           <i class="iconfont iconshangjiantou"></i>
           <div class="select-box">
-            <div>
-               <router-link tag="span" :to="{ path: '/mdeditor'}">发起提问</router-link>
+            <div class="select-item">
+              <router-link tag="span" :to="{ path: '/mdeditor'}">发起提问</router-link>
             </div>
-            <div>我的提问</div>
-            <div>11</div>
-            <div>11</div>
+            <div class="select-item">
+              <router-link tag="span" :to="{ path: '/home/blog'}">发起提问</router-link>
+            </div>
+            <div class="select-item"></div>
+            <div class="select-item">11</div>
           </div>
         </div>
       </div>
@@ -44,7 +46,6 @@
 export default {}
 </script>
 <style lang="scss">
-
 .pc-home {
   background: #f5f6f7;
   height: 100%;
@@ -69,9 +70,14 @@ export default {}
         background-color: #fff;
         border-radius: 0 0 4px 4px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-        width: 124px;
-        padding: 8px 0;
+        width: 90px;
+        padding: 8px 16px;
         box-sizing: border-box;
+        .select-item {
+          &:hover {
+            color: #ca0c16;
+          }
+        }
       }
       img {
         height: 22px;
@@ -81,12 +87,13 @@ export default {}
         float: left;
       }
       .iconshangjiantou {
+        transform: scale(0.7);
         font-size: 12px;
         float: left;
         padding: 0 5px;
         padding-left: 5px;
         cursor: pointer;
-        transition: all 0.5s;
+        transition: all 0.3s;
         transform-origin: 50% 50%;
         // &:hover {
         //   transform: rotate(180deg);
@@ -98,7 +105,7 @@ export default {}
           display: block;
         }
         .iconshangjiantou {
-          transform: rotate(180deg);
+          transform: scale(0.7) rotate(-180deg);
           transform-origin: 50% 50%;
         }
       }

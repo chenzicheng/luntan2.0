@@ -164,7 +164,8 @@ export default {
   },
   methods: {
     typeSelect(index) {
-      console.log('zz')
+      // alert(1)
+      // console.log('zz')
       // if (document.body) {
       //   document.body.scrollTop = 0
       // } else if (document.documentElement) {

@@ -331,6 +331,16 @@ export const constantRouterMap = [
         path: 'tab',
         name: 'tab',
         component: () => import('@/views/home/tab')
+      },
+      {
+        path: 'blog',
+        name: 'blog',
+        component: () => import('@/views/home/blog/index')
+      },
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import('@/views/home/blog/blogdetail')
       }
     ]
   },

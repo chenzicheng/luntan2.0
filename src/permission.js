@@ -9,7 +9,7 @@ import { generateIndexRouter } from "@/utils/util"
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/user/login', '/user/register', '/user/register-result', '/user/alteration', '/home', '/home/tab','/mdeditor'] // no redirect whitelist
+const whiteList = ['/user/login', '/user/register', '/user/register-result', '/user/alteration', '/home', '/home/tab','/home/blog','/home/detail','/mdeditor'] // no redirect whitelist
 
 router.beforeEach((to, from, next) => {
   console.log(to)
